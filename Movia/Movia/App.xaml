@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Movia.App">
     <Application.Resources>
-
+    <Color x:Key="Primary">#1b40a0</Color>
+      <Color x:Key="Secondary">#083b8e</Color>
     </Application.Resources>
 </Application>

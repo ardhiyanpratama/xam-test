@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:Class="Movia.Views.HomePage">
+    <ContentPage.Content>
+    <Grid RowDefinitions="75,100,*">
+      <Grid Grid.Row="0" RowSpacing="0" ColumnSpacing="0" ColumnDefinitions="*,60">
+        <StackLayout Grid.Column="0"
+                     Orientation="Vertical">
+          <Label Text="Good Morning"
+                 FontSize="12"
+                 VerticalOptions="Start"
+                 HorizontalOptions="Start"
+                 Margin="15,15,0,0"
+                 TextColor="Black"/>
+          <Label Text="Ardhiyan Pratama"
+                 FontSize="16"
+                 FontAttributes="Bold"
+                 VerticalOptions="Start"
+                 HorizontalOptions="Start"
+                 Margin="15,-5,0,0"
+                 TextColor="Black"/>
+        </StackLayout>
+
+        <xct:AvatarView Grid.Column="1" Source="{Binding AvatarView}"
+                        HeightRequest="13"
+                        WidthRequest="13"
+                        Margin="0,15,15,0"
+                        />
+
+      </Grid>
+
+      <StackLayout Grid.Row="1" Orientation="Horizontal" Margin="10,0,0,0">
+        <pancake:PancakeView CornerRadius="15"
+                        WidthRequest="190"
+                        BackgroundColor="{StaticResource Secondary}">
+          <pancake:PancakeView.Shadow>
+            <pancake:DropShadow Color="DarkGray" Offset="10,10"/>
+          </pancake:PancakeView.Shadow>
+
+          <StackLayout VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="10,10,0,0"
+                       Orientation="Vertical">
+            <Label Text="Blue"
+                   FontSize="14"
+                   TextColor="White"
+                   FontAttributes="Bold"/>
+
+            <Label Text="50 Poin"
+                   FontSize="12"
+                   TextColor="White"/>
+
+          </StackLayout>
+
+        </pancake:PancakeView>
+
+        <pancake:PancakeView CornerRadius="15"
+                        WidthRequest="190"
+                        Margin="5,0,15,0"
+                        BackgroundColor="#ffffff">
+          <pancake:PancakeView.Shadow>
+            <pancake:DropShadow Color="#f4f4f4" Offset="10,10"/>
+          </pancake:PancakeView.Shadow>
+
+          <StackLayout VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="10,10,0,0"
+                       Orientation="Vertical">
+            <Label Text="Service History"
+                   FontSize="14"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label Text="30/11/2022"
+                   FontSize="20"
+                   TextColor="#b1b5bb"/>
+
+          </StackLayout>
+
+        </pancake:PancakeView>
+      </StackLayout>
+
+      <StackLayout Grid.Row="2">
+        <StackLayout Orientation="Horizontal">
+          <Label Text="Special Offer"
+                 Margin="15,20,0,0"
+                 FontSize="16"
+                 FontAttributes="Bold"
+                 TextColor="Black"/>
+
+          <Label Text="View All"
+                 VerticalOptions="End"
+                 HorizontalOptions="EndAndExpand"
+                 Margin="0,0,20,0"
+                 TextColor="{StaticResource Secondary}"
+                 FontSize="12"/>
+
+        </StackLayout>
+
+      </StackLayout>
+
+    </Grid>
+	</ContentPage.Content>
+</ContentPage>
+
