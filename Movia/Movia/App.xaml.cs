@@ -1,4 +1,5 @@
 ﻿using System;
+using Movia.Services.IServices;
 using Movia.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,7 +11,7 @@ namespace Movia
 		public App()
 		{
 			InitializeComponent();
-
+			DependencyService.Register<IMovieService, MovieService>();
 			MainPage = new HomePage();
 		}
 

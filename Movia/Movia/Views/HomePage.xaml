@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    x:Class="Movia.Views.HomePage">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:viewmodels="clr-namespace:Movia.ViewModels"
+    x:Class="Movia.Views.HomePage"
+    x:DataType="viewmodels:HomeViewModels">
     <ContentPage.Content>
     <Grid RowDefinitions="75,100,*">
       <Grid Grid.Row="0" RowSpacing="0" ColumnSpacing="0" ColumnDefinitions="*,60">
@@ -23,11 +24,11 @@
                  TextColor="Black"/>
         </StackLayout>
 
-        <xct:AvatarView Grid.Column="1" Source="{Binding AvatarView}"
+        <!--<xct:AvatarView Grid.Column="1" Source="{Binding AvatarView}"
                         HeightRequest="13"
                         WidthRequest="13"
                         Margin="0,15,15,0"
-                        />
+                        />-->
 
       </Grid>
 
@@ -84,7 +85,7 @@
 
       <StackLayout Grid.Row="2">
         <StackLayout Orientation="Horizontal">
-          <Label Text="Special Offer"
+          <Label Text="{Binding Genre.Count}"
                  Margin="15,20,0,0"
                  FontSize="16"
                  FontAttributes="Bold"

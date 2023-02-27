@@ -4,42 +4,28 @@ using System.ComponentModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Movia.Models;
+using Movia.Services.IServices;
+using Xamarin.Forms;
 
 namespace Movia.ViewModels
 {
 	public partial class HomeViewModels : ObservableObject
 	{
 		public ObservableCollection<Movie> Movies;
+		public ObservableCollection<Genre> Genre;
 
-		public HomeViewModels()
+		//DI Injection
+		IMovieService _movieService;
+
+        public HomeViewModels()
 		{
-
+			_movieService = DependencyService.Get<IMovieService>();
 		}
 
 		[RelayCommand]
-		private void addMovies()
+		private void getGenres()
 		{
-			Movies.Add(new Movie
-			{
-				Id = "0",
-				Description = "Refferal",
-				RefferalDate = DateTime.UtcNow,
-				ImgSource = "image"
-			});
-			Movies.Add(new Movie
-			{
-				Id = "1",
-				Description = "Refferal",
-				RefferalDate = DateTime.UtcNow,
-				ImgSource = "image"
-			});
-			Movies.Add(new Movie
-			{
-				Id = "2",
-				Description = "Refferal",
-				RefferalDate = DateTime.UtcNow,
-				ImgSource = "image"
-			});
+			var result = _movieService.GetGender();
 		}
 
 	}
